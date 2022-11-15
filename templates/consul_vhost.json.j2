@@ -1,0 +1,3 @@
+{{ ansible_managed | comment }}
+
+{{ consul_vhosts[item] | to_nice_json }}

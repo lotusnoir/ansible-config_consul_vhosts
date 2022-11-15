@@ -1,0 +1,57 @@
+---
+### Install variables
+consul_vhosts_owner: consul
+consul_vhosts_group: consul
+consul_vhosts_config_dir: "/opt/consul.d"
+
+### vhosts vars
+consul_vhosts: ""
+#  filename1:
+#    services:
+#      - name: servicename1
+#        address: 10.1.1.1
+#        port: 8080
+#        tags:
+#          - traefik.enable=true
+#          - traefik.http.routers.kafka-ui.tls=true
+#          - traefik.http.routers.kafka-ui.entrypoints=websecureprive
+#          - traefik.http.routers.kafka-ui.rule=Host(`kafka-ui.int.test.fr`)
+#          - traefik.http.services.kafka-ui.loadbalancer.sticky.cookie.name=sticky_session
+#          - traefik.http.services.kafka-ui.loadbalancer.sticky.cookie.secure=true
+#          - traefik.http.services.kafka-ui.loadbalancer.sticky.cookie.httpOnly=true
+#          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.source=keycloak-test
+#          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.session.secret=q94xExq3wWJQF2J9
+#          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.redirectUrl=/callback
+#          - traefik.http.routers.kafka-ui.middlewares=oidc-kafka-ui
+#          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.claims=Contains(`realm_access.roles`,`kafka-administrateur`)
+#    meta: {}
+#    checks:
+#      - name: inframaster-val-rabbitmq-tcp
+#        tcp: 10.1.85.56:15672
+#        interval: 1s
+#        timeout: 900ms
+#        failures_before_critical: 3
+#  filename2:
+#    services:
+#      - name: asdasd
+#        address: 10.q123123.161
+#        port: 80812
+#        tags:
+#          - traefik.enable=true
+#          - traefik.http.routers.kafka-ui.tls=true
+#          - traefik.http.routers.kafka-ui.entrypoints=websecureprive
+#          - traefik.http.routers.kafka-ui.rule=Host(`kafka-ui.int.test.fr`)
+#          - traefik.http.services.kafka-ui.loadbalancer.sticky.cookie.name=sticky_session
+#          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.claims=Contains(`realm_access.roles`,`kafka-administrateur`)
+#    meta:
+#    checks:
+#      - name: inframaster-val-rabbitmq-tcp
+#        tcp: 10.1.85.56:15672
+#        interval: 1s
+#        timeout: 900ms
+#        failures_before_critical: 3
+#      - name: inrabbitmqqwdqwd-tcp
+#        tcp: 10.1i12121.85.56:15
+#        interval: 1s
+#        timeout: 900ms
+#        failures_before_critical: 3

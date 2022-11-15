@@ -1,0 +1,3 @@
+---
+- name: reload consul
+  ansible.builtin.command: consul reload

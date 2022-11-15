@@ -1,0 +1,28 @@
+---
+- name: "Ensure consul folder exists"
+  ansible.builtin.file:
+    path: "{{ consul_vhosts_config_dir }}"
+    owner: "{{ consul_vhosts_owner }}"
+    group: "{{ consul_vhosts_group }}"
+    state: directory
+    mode: '0755'
+
+- name: Create vhosts
+  when: consul_vhosts is defined and consul_vhosts|length>0
+  block:
+    - name: "vhosts to create"
+      ansible.builtin.debug:
+        var: item
+      with_items:
+        "{{ consul_vhosts }}"
+
+    - name: "Create consul vhost file"
+      ansible.builtin.template:
+        src: consul_vhost.json.j2
+        dest: "{{ consul_vhosts_config_dir }}/{{ item }}.json"
+        owner: "{{ consul_vhosts_owner }}"
+        group: "{{ consul_vhosts_group }}"
+        mode: 0644
+      with_items:
+        "{{ consul_vhosts }}"
+      notify: reload consul
