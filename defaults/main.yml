@@ -24,13 +24,13 @@ consul_vhosts: ""
 #          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.redirectUrl=/callback
 #          - traefik.http.routers.kafka-ui.middlewares=oidc-kafka-ui
 #          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.claims=Contains(`realm_access.roles`,`kafka-administrateur`)
-#    meta: {}
-#    checks:
-#      - name: inframaster-val-rabbitmq-tcp
-#        tcp: 10.1.85.56:15672
-#        interval: 1s
-#        timeout: 900ms
-#        failures_before_critical: 3
+#        meta: {}
+#        checks:
+#          - name: inframaster-val-rabbitmq-tcp
+#            tcp: 10.1.85.56:15672
+#            interval: 1s
+#            timeout: 900ms
+#            failures_before_critical: 3
 #  filename2:
 #    services:
 #      - name: asdasd
@@ -43,15 +43,15 @@ consul_vhosts: ""
 #          - traefik.http.routers.kafka-ui.rule=Host(`kafka-ui.int.test.fr`)
 #          - traefik.http.services.kafka-ui.loadbalancer.sticky.cookie.name=sticky_session
 #          - traefik.http.middlewares.oidc-kafka-ui.plugin.oidcAuth.claims=Contains(`realm_access.roles`,`kafka-administrateur`)
-#    meta:
-#    checks:
-#      - name: inframaster-val-rabbitmq-tcp
-#        tcp: 10.1.85.56:15672
-#        interval: 1s
-#        timeout: 900ms
-#        failures_before_critical: 3
-#      - name: inrabbitmqqwdqwd-tcp
-#        tcp: 10.1i12121.85.56:15
-#        interval: 1s
-#        timeout: 900ms
-#        failures_before_critical: 3
+#        meta:
+#        checks:
+#          - name: inframaster-val-rabbitmq-tcp
+#            tcp: 10.1.85.56:15672
+#            interval: 1s
+#            timeout: 900ms
+#            failures_before_critical: 3
+#          - name: inrabbitmqqwdqwd-tcp
+#            tcp: 10.1i12121.85.56:15
+#            interval: 1s
+#            timeout: 900ms
+#            failures_before_critical: 3
